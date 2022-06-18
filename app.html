@@ -54,6 +54,10 @@
         }).addTo(map);
     }
     //GEOJSON
-    L.geoJSON(pointJSON).addTo(map)
+    L.geoJSON(pointJSON, {
+        pointToLayer: function (Feature, latlng) {
+            return L.marker(latlng);
+        }
+        });
   </script>
 </html>
